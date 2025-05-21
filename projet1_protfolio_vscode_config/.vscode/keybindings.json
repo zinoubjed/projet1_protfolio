@@ -1,0 +1,17 @@
+[
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Ouvrir JupyterLab"
+  },
+  {
+    "key": "ctrl+alt+g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Git Commit et Push"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Git Commit Push Merge"
+  }
+]

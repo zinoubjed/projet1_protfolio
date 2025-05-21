@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Ouvrir JupyterLab",
+      "type": "shell",
+      "command": "${workspaceFolder}/ouvrir_jupyterlab_freelance.bat",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Git Commit et Push",
+      "type": "shell",
+      "command": "${workspaceFolder}/commit_et_push.bat",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Git Commit Push Merge",
+      "type": "shell",
+      "command": "${workspaceFolder}/commit_push_merge.bat",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
+}
