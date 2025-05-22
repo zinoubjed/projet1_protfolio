@@ -1,0 +1,14 @@
+notes/
+cheat_sheet.md
+.ipynb_checkpoints/
+anaconda_projects/
+.vscode/
+.venv/
+__pycache__/
+data/
+*.pyc
+*.pyo
+*.DS_Store
+.env
+*.bak
+*.log
