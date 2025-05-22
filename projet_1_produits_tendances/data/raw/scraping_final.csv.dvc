@@ -1,5 +1,0 @@
-outs:
-- md5: d28c0b64e200f56e63b109ff2ab8c73b
-  size: 59
-  hash: md5
-  path: scraping_final.csv
