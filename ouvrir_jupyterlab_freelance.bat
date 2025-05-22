@@ -1,41 +1,33 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Aller dans le dossier du projet
+:: ✅ Aller dans le dossier du projet (adapter si besoin)
 cd /d "C:\Users\USER\OneDrive\Desktop\projet1_protfolio\projet_1_produits_tendances" || (
     echo ❌ ERREUR : Le dossier du projet est introuvable !
     pause
     exit /b 1
 )
 
-:: Activer l'environnement conda
+:: ✅ Activer l’environnement conda dans PowerShell proprement
 call "C:\Users\USER\anaconda3\Scripts\activate.bat"
 call conda activate produits_env || (
-    echo ❌ ERREUR : Impossible d'activer l'environnement conda "produits_env"
+    echo ❌ ERREUR : Impossible d’activer l’environnement conda "produits_env"
     pause
     exit /b 1
 )
 
-:: Ouvrir VS Code dans le dossier du projet
-start "" code .
+:: ✅ Lancer VS Code dans le dossier du projet
+start "" "C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\Code.exe" "%CD%"
 
-:: Lancer JupyterLab dans le dossier du projet
-start "" jupyter lab --notebook-dir="%CD%" || (
-    echo ❌ ERREUR : Impossible de lancer Jupyter Lab
-    pause
-    exit /b 1
-)
+:: ✅ Lancer Jupyter Lab dans ce dossier SANS ouvrir de fenêtre parasite
+start "" /min cmd /c "jupyter lab --notebook-dir=%CD% >nul 2>&1"
 
-:: Attendre quelques secondes pour s'assurer que Jupyter démarre
+:: ✅ Attendre que le serveur Jupyter démarre
 timeout /t 5 /nobreak > nul
 
-:: Ouvrir Chrome dans une nouvelle fenêtre indépendante sur JupyterLab
-start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --new-window "http://localhost:8888/lab" || (
-    echo ❌ ERREUR : Impossible d'ouvrir Chrome
-    pause
-    exit /b 1
-)
+:: ✅ Ouvrir UNE SEULE fenêtre Chrome sur JupyterLab
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --new-window "http://localhost:8888/lab"
 
-:: Fin du script
-echo ✅ Projet lancé avec succès.
-exit
+:: ✅ Afficher un message final
+echo ✅ Environnement prêt, Jupyter Lab et VS Code ouverts dans le bon dossier.
+exit /b 0
