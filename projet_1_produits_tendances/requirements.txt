@@ -1,0 +1,34 @@
+# Base
+numpy
+pandas
+matplotlib
+seaborn
+
+# Machine Learning
+scikit-learn
+xgboost
+lightgbm
+scipy
+joblib
+
+# Jupyter & Notebook Tools
+jupyter
+notebook
+ipykernel
+ipywidgets
+nbstripout
+nbdime
+tqdm
+
+# Git + DVC
+dvc[jupyter]
+gitpython
+
+# Deep Learning (optionnel)
+torch
+transformers
+
+# Autres
+openpyxl
+pyyaml
+plotly
