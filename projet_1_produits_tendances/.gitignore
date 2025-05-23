@@ -1,16 +1,48 @@
-notes/
-cheat_sheet.md
-.ipynb_checkpoints/
-anaconda_projects/
-.vscode/
-.venv/
+﻿# Environnements virtuels Python
+venv/
+env/
 __pycache__/
-data/
 *.pyc
-*.pyo
-*.DS_Store
+
+# Fichiers d'environnement secrets
 .env
-*.bak
+
+# Dossiers de données volumineuses (DVC, datasets, outputs)
+.dvc/
+data/
+datasets/
+output/
+results/
+
+# Logs et fichiers temporaires
 *.log
-.env
-/data
+*.tmp
+
+# Cache Jupyter Notebook
+.ipynb_checkpoints/
+
+# Fichiers temporaires Windows / Mac
+.DS_Store
+Thumbs.db
+
+# Fichiers et dossiers de l'éditeur VSCode
+.vscode/
+
+# Fichiers batch et PowerShell locaux (scripts)
+*.bat
+*.ps1
+
+# Fichiers de checkpoints ou modèles lourds
+*.ckpt
+*.h5
+*.pt
+*.pth
+
+# Backup / fichiers temporaires
+*~
+*.bak
+
+# Fichiers SQLite (si utilisés)
+*.sqlite
+*.db
+
