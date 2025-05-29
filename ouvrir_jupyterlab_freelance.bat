@@ -8,21 +8,27 @@ cd /d "C:\Users\USER\OneDrive\Desktop\projet1_protfolio\projet_1_produits_tendan
     exit /b 1
 )
 
-:: ✅ Activer l’environnement conda dans PowerShell proprement
-call "C:\Users\USER\anaconda3\Scripts\activate.bat"
+:: ✅ Initialiser Conda (active le script d’activation)
+call "C:\Users\USER\anaconda3\Scripts\activate.bat" || (
+    echo ❌ ERREUR : Impossible d'appeler activate.bat de Conda
+    pause
+    exit /b 1
+)
+
+:: ✅ Activer l’environnement conda "produits_env"
 call conda activate produits_env || (
     echo ❌ ERREUR : Impossible d’activer l’environnement conda "produits_env"
     pause
     exit /b 1
 )
 
-:: ✅ Lancer VS Code dans le dossier du projet
+:: ✅ Lancer VS Code dans le dossier courant
 start "" "C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\Code.exe" "%CD%"
 
 :: ✅ Lancer Jupyter Lab dans ce dossier SANS ouvrir de fenêtre parasite
 start "" /min cmd /c "jupyter lab --notebook-dir=%CD% >nul 2>&1"
 
-:: ✅ Attendre que le serveur Jupyter démarre
+:: ✅ Attendre que le serveur Jupyter démarre (5 secondes)
 timeout /t 5 /nobreak > nul
 
 :: ✅ Ouvrir UNE SEULE fenêtre Chrome sur JupyterLab
