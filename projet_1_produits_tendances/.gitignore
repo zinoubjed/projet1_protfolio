@@ -48,3 +48,5 @@ Thumbs.db
 
 data/*_*.csv
 !data/final_*.csv
+create_site_structure.ps1
+notebooks/
